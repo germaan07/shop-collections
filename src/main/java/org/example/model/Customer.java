@@ -24,4 +24,26 @@ public class Customer implements Comparable<Customer>{
         }
         return compare;
     }
+
+    public boolean isCustomer(String nif){
+        return this.nif.equals(nif);
+    }
+
+    public Order findOrder(int id){
+        for (Order o : orders){
+            if (o.isOrder(id)){
+                return o;
+            }
+        }
+        return null;
+    }
+
+    public double totalSpend(){
+        double spend = 0;
+        for (Order o : orders){
+            o.totalPrice();
+            spend = spend + o.getPrice();
+        }
+        return spend;
+    }
 }

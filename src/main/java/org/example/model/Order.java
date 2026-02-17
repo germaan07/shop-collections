@@ -13,4 +13,14 @@ public class Order {
     private LocalDate date;
     private double price;
     private List<OrderItem> items;
+
+    public boolean isOrder(int id){
+        return this.id == id;
+    }
+
+    public void totalPrice(){
+        for (OrderItem o : items){
+            price = price + o.getAmount();
+        }
+    }
 }

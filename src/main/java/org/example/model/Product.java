@@ -12,4 +12,13 @@ public class Product {
     private String name;
     private double price;
     private Set<String> tags;
+
+    public boolean isProduct(String tag){
+        for (String t : tags){
+            if (t.equals(tag)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
